@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp">
+
+            //imagen, nombre, raza, clase
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="6dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:srcCompat="@tools:sample/avatars[0]" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/nombre"
+                        android:textSize="12dp"/>
+                    <TextView
+                        android:id="@+id/nombre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/raza"
+                        android:textSize="12dp"/>
+                    <TextView
+                        android:id="@+id/raza"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/clase"
+                        android:textSize="12dp"/>
+                    <TextView
+                        android:id="@+id/clase"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_margin="12dp"
+                android:text="@string/stats"
+                android:textSize="24dp"/>
+
+            //NV, EXP
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/NV"
+                        android:textSize="12dp"/>
+
+                    <TextView
+                        android:id="@+id/NV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/EXP"
+                        android:textSize="12dp"/>
+
+                    <TextView
+                        android:id="@+id/EXP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"/>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            //PG, CA, VEL
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/PG"
+                        android:textSize="12dp"/>
+
+                    <TextView
+                        android:id="@+id/PG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/CA"
+                        android:textSize="12dp"/>
+
+                    <TextView
+                        android:id="@+id/CA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/VEL"
+                        android:textSize="12dp"/>
+
+                    <TextView
+                        android:id="@+id/VEL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"/>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            //FUE, DES, CON, INT, SAB, CAR
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/FUE"
+                        android:textSize="12dp"/>
+
+                    <TextView
+                        android:id="@+id/FUE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/DES"
+                        android:textSize="12dp"/>
+
+                    <TextView
+                        android:id="@+id/DES"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/CON"
+                        android:textSize="12dp"/>
+
+                    <TextView
+                        android:id="@+id/CON"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/INT"
+                        android:textSize="12dp"/>
+
+                    <TextView
+                        android:id="@+id/INT"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/SAB"
+                        android:textSize="12dp"/>
+
+                    <TextView
+                        android:id="@+id/SAB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/CAR"
+                        android:textSize="12dp"/>
+
+                    <TextView
+                        android:id="@+id/CAR"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"/>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_margin="12dp"
+                android:text="@string/salvacion"
+                android:textSize="24dp"/>
+
+            //FUE, DES, CON, INT, SAB, CAR
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/FUEcb"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="FUE"
+                    android:textSize="12dp"/>
+
+                <CheckBox
+                    android:id="@+id/DEScb"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="DES"
+                    android:textSize="12dp"/>
+
+                <CheckBox
+                    android:id="@+id/CONcb"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="CON"
+                    android:textSize="12dp"/>
+
+                <CheckBox
+                    android:id="@+id/INTcb"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="INT"
+                    android:textSize="12dp"/>
+
+                <CheckBox
+                    android:id="@+id/SABcb"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="SAB"
+                    android:textSize="12dp"/>
+
+                <CheckBox
+                    android:id="@+id/CARcb"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="CAR"
+                    android:textSize="12dp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_margin="12dp"
+                android:text="@string/habilidades"
+                android:textSize="24dp"/>
+
+            //HABILIDADES
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                //Lista 1
+                <TableLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    //Acrobacias
+                    <TableRow>
+
+                        <TextView
+                            android:text="@string/acrobacias"
+                            android:textSize="18dp"/>
+                        <TextView
+                            android:id="@+id/acrobacias"
+                            android:textSize="18dp"/>
+
+                    </TableRow>
+
+                    //Arcanos
+                    <TableRow>
+
+                        <TextView
+                            android:text="@string/arcanos"
+                            android:textSize="18dp"/>
+                        <TextView
+                            android:id="@+id/arcanos"
+                            android:textSize="18dp"/>
+
+                    </TableRow>
+
+                    //Atletismo
+                    <TableRow>
+
+                        <TextView
+                            android:text="@string/atletismo"
+                            android:textSize="18dp"/>
+                        <TextView
+                            android:id="@+id/atletismo"
+                            android:textSize="18dp"/>
+
+                    </TableRow>
+
+                    //Engañar
+                    <TableRow>
+
+                        <TextView
+                            android:text="@string/engañar"
+                            android:textSize="18dp"/>
+                        <TextView
+                            android:id="@+id/engañar"
+                            android:textSize="18dp"/>
+
+                    </TableRow>
+
+                    //Historia
+                    <TableRow>
+
+                        <TextView
+                            android:text="@string/historia"
+                            android:textSize="18dp"/>
+                        <TextView
+                            android:id="@+id/historia"
+                            android:textSize="18dp"/>
+
+                    </TableRow>
+
+                    //Interpretación
+                    <TableRow>
+
+                        <TextView
+                            android:text="@string/interpretacion"
+                            android:textSize="18dp"/>
+                        <TextView
+                            android:id="@+id/interpretacion"
+                            android:textSize="18dp"/>
+
+                    </TableRow>
+
+                    //Intimidar
+                    <TableRow>
+
+                        <TextView
+                            android:text="@string/intimidar"
+                            android:textSize="18dp"/>
+                        <TextView
+                            android:id="@+id/intimidar"
+                            android:textSize="18dp"/>
+
+                    </TableRow>
+
+                    //Investigación
+                    <TableRow>
+
+                        <TextView
+                            android:text="@string/investigacion"
+                            android:textSize="18dp"/>
+                        <TextView
+                            android:id="@+id/investigacion"
+                            android:textSize="18dp"/>
+
+                    </TableRow>
+
+                    //Juego de manos
+                    <TableRow>
+
+                        <TextView
+                            android:text="@string/juegoDeManos"
+                            android:textSize="18dp"/>
+                        <TextView
+                            android:id="@+id/juegoDeManos"
+                            android:textSize="18dp"/>
+
+                    </TableRow>
+
+                </TableLayout>
+
+                //Lista 2
+                <TableLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    //Medicina
+                    <TableRow>
+
+                        <TextView
+                            android:text="@string/medicina"
+                            android:textSize="18dp"/>
+                        <TextView
+                            android:id="@+id/medicina"
+                            android:textSize="18dp"/>
+
+                    </TableRow>
+
+                    //Naturaleza
+                    <TableRow>
+
+                        <TextView
+                            android:text="@string/naturaleza"
+                            android:textSize="18dp"/>
+                        <TextView
+                            android:id="@+id/naturaleza"
+                            android:textSize="18dp"/>
+
+                    </TableRow>
+
+                    //Percepción
+                    <TableRow>
+
+                        <TextView
+                            android:text="@string/percepcion"
+                            android:textSize="18dp"/>
+                        <TextView
+                            android:id="@+id/percepcion"
+                            android:textSize="18dp"/>
+
+                    </TableRow>
+
+                    //Perspicacia
+                    <TableRow>
+
+                        <TextView
+                            android:text="@string/perspicacia"
+                            android:textSize="18dp"/>
+                        <TextView
+                            android:id="@+id/perspicacia"
+                            android:textSize="18dp"/>
+
+                    </TableRow>
+
+                    //Persuasión
+                    <TableRow>
+
+                        <TextView
+                            android:text="@string/persuasion"
+                            android:textSize="18dp"/>
+                        <TextView
+                            android:id="@+id/persuasion"
+                            android:textSize="18dp"/>
+
+                    </TableRow>
+
+                    //Religión
+                    <TableRow>
+
+                        <TextView
+                            android:text="@string/religion"
+                            android:textSize="18dp"/>
+                        <TextView
+                            android:id="@+id/religion"
+                            android:textSize="18dp"/>
+
+                    </TableRow>
+
+                    //Sigilo
+                    <TableRow>
+
+                        <TextView
+                            android:text="@string/sigilo"
+                            android:textSize="18dp"/>
+                        <TextView
+                            android:id="@+id/sigilo"
+                            android:textSize="18dp"/>
+
+                    </TableRow>
+
+                    //Supervivencia
+                    <TableRow>
+
+                        <TextView
+                            android:text="@string/supervivencia"
+                            android:textSize="18dp"/>
+                        <TextView
+                            android:id="@+id/supervivencia"
+                            android:textSize="18dp"/>
+
+                    </TableRow>
+
+                    //Trato con animales
+                    <TableRow>
+
+                        <TextView
+                            android:text="@string/tratoConAnimales"
+                            android:textSize="18dp"/>
+                        <TextView
+                            android:id="@+id/tratoConAnimales"
+                            android:textSize="18dp"/>
+
+                    </TableRow>
+
+                </TableLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/volver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="volver"/>
+
+        <Button
+            android:id="@+id/editar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/volver"
+            android:text="editar"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

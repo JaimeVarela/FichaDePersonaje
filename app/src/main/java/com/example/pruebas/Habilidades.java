@@ -18,7 +18,7 @@ public class Habilidades {
             "SAB", //Percepcion
             "SAB", //Perspicacia
             "CAR", //Persuasion
-            "INT", //Religion
+            "INT", //Religión
             "DES", //Sigilo
             "SAB", //Supervivencia
             "SAB"  //Trato con animales

@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 import android.content.Intent;
@@ -13,20 +14,22 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class FichaGeneral extends AppCompatActivity {
+public class FichaGeneral extends AppCompatActivity implements View.OnClickListener {
 
     private TextView nombre, raza, clase, pg, ca, vel, nv, exp;
     private TextView[] stats;
     private ArrayList<CheckBox> salvacion;
     private ArrayList<TextView> habilidades;
+    private Button volver, editar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ficha_general);
+        setContentView(R.layout.pruebas);
 
         asociar();
         iniciar();
+        eventos();
     }
 
     private void asociar(){
@@ -74,6 +77,9 @@ public class FichaGeneral extends AppCompatActivity {
         habilidades.add((TextView) findViewById(R.id.sigilo));
         habilidades.add((TextView) findViewById(R.id.supervivencia));
         habilidades.add((TextView) findViewById(R.id.tratoConAnimales));
+
+        volver = (Button)findViewById(R.id.volver);
+        editar = (Button)findViewById(R.id.editar);
     }
 
     private void iniciar(){
@@ -150,11 +156,16 @@ public class FichaGeneral extends AppCompatActivity {
         }
     }
 
+    private void eventos(){
+        volver.setOnClickListener(this);
+        editar.setOnClickListener(this);
+    }
+
     private int BonificadorStats(int valor){
          return ((valor / 2) - 5);
     }
 
-    public void editar(View vista){
+    private void editar(){
         //Enlace con otra actividad
         String codigo = getIntent().getStringExtra("codigo");
         Intent otra = new Intent(this, MainActivity.class);
@@ -181,12 +192,24 @@ public class FichaGeneral extends AppCompatActivity {
         startActivity(otra);
     }
 
-    public void volver(View vista){
+    private void volver(){
         Intent volver = new Intent(this, Perfiles.class);
         startActivity(volver);
     }
 
     private void toast(String texto){
         Toast.makeText(this, texto, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.volver:
+                volver();
+                break;
+            case R.id.editar:
+                editar();
+                break;
+        }
     }
 }
