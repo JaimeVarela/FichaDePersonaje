@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="513dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:id="@+id/tableLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/nomText"
+                        android:layout_span="1"
+                        android:text="@string/nombre"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/nombre"
+                        android:layout_span="1"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:textSize="18sp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/razaTv"
+                        android:layout_span="1"
+                        android:text="@string/raza"
+                        android:textSize="18sp" />
+
+                    <Spinner
+                        android:id="@+id/spn1"
+                        android:layout_span="1" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/claseTv"
+                        android:layout_span="1"
+                        android:text="@string/clase"
+                        android:textSize="18sp" />
+
+                    <Spinner
+                        android:id="@+id/spn2"
+                        android:layout_span="1" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/nvText"
+                        android:layout_span="1"
+                        android:text="@string/NV"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/NV"
+                        android:layout_span="1"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:textSize="18sp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/expText"
+                        android:layout_span="1"
+                        android:text="@string/EXP"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/EXP"
+                        android:layout_span="1"
+                        android:inputType="number"
+                        android:textSize="18sp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/pgText"
+                        android:layout_span="1"
+                        android:text="@string/PG"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/PG"
+                        android:layout_span="1"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:textSize="18sp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/caText"
+                        android:layout_span="1"
+                        android:text="@string/CA"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/CA"
+                        android:layout_span="1"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:textSize="18sp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/movText"
+                        android:layout_span="1"
+                        android:text="@string/VEL"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/VEL"
+                        android:layout_span="1"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:textSize="18sp" />
+
+                </TableRow>
+
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/statsTableLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/FUE"
+                        android:layout_span="1"
+                        android:text="@string/FUE"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/FUEvalor"
+                        android:layout_span="1"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/DES"
+                        android:layout_span="1"
+                        android:text="@string/DES"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/DESvalor"
+                        android:layout_span="1"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/text12"
+                        android:layout_span="1"
+                        android:text="@string/CON"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/CONvalor"
+                        android:layout_span="1"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:textSize="18sp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/INT"
+                        android:layout_span="1"
+                        android:text="@string/INT"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/INTvalor"
+                        android:layout_span="1"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/SAB"
+                        android:layout_span="1"
+                        android:text="@string/SAB"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/SABvalor"
+                        android:layout_span="1"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/CAR"
+                        android:layout_span="1"
+                        android:text="@string/CAR"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/CARvalor"
+                        android:layout_span="1"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:textSize="18sp" />
+
+                </TableRow>
+
+            </TableLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/StatsBt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    android:onClick="calcular"
+                    android:text="@string/StatsBt" />
+
+                <TextView
+                    android:id="@+id/dados"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tiradas de salvación"
+                android:textSize="24sp" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <CheckBox
+                        android:id="@+id/FUEcb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/FUE"
+                        android:textSize="18sp" />
+
+                    <CheckBox
+                        android:id="@+id/DEScb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/DES"
+                        android:textSize="18sp" />
+
+                    <CheckBox
+                        android:id="@+id/CONcb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/CON"
+                        android:textSize="18sp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <CheckBox
+                        android:id="@+id/INTcb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/INT"
+                        android:textSize="18sp" />
+
+                    <CheckBox
+                        android:id="@+id/SABcb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/SAB"
+                        android:textSize="18sp" />
+
+                    <CheckBox
+                        android:id="@+id/CARcb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/CAR"
+                        android:textSize="18sp" />
+                </TableRow>
+
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Habilidades"
+                android:textSize="24sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/acrobaciasCb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/acrobacias"
+                    android:textSize="18sp" />
+
+                <CheckBox
+                    android:id="@+id/arcanosCb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/arcanos"
+                    android:textSize="18sp" />
+
+                <CheckBox
+                    android:id="@+id/atletismoCb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/atletismo"
+                    android:textSize="18sp" />
+
+                <CheckBox
+                    android:id="@+id/engañarCb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/engañar"
+                    android:textSize="18sp" />
+
+                <CheckBox
+                    android:id="@+id/historiaCb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/historia"
+                    android:textSize="18sp" />
+
+                <CheckBox
+                    android:id="@+id/interpretacionCb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/interpretacion"
+                    android:textSize="18sp" />
+
+                <CheckBox
+                    android:id="@+id/intimidarCb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/intimidar"
+                    android:textSize="18sp" />
+
+                <CheckBox
+                    android:id="@+id/investigacionCb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/investigacion"
+                    android:textSize="18sp" />
+
+                <CheckBox
+                    android:id="@+id/juegoDeManosCb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/juegoDeManos"
+                    android:textSize="18sp" />
+
+                <CheckBox
+                    android:id="@+id/medicinaCb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/medicina"
+                    android:textSize="18sp" />
+
+                <CheckBox
+                    android:id="@+id/naturalezaCb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/naturaleza"
+                    android:textSize="18sp" />
+
+                <CheckBox
+                    android:id="@+id/percepcionCb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/percepcion"
+                    android:textSize="18sp" />
+
+                <CheckBox
+                    android:id="@+id/perspicaciaCb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/perspicacia"
+                    android:textSize="18sp" />
+
+                <CheckBox
+                    android:id="@+id/persuasionCb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/persuasion"
+                    android:textSize="18sp" />
+
+                <CheckBox
+                    android:id="@+id/religionCb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/religion"
+                    android:textSize="18sp" />
+
+                <CheckBox
+                    android:id="@+id/sigiloCb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sigilo"
+                    android:textSize="18sp" />
+
+                <CheckBox
+                    android:id="@+id/supervivenciaCb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/supervivencia"
+                    android:textSize="18sp" />
+
+                <CheckBox
+                    android:id="@+id/tratoConAnimalesCb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tratoConAnimales"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="12dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="guardar"
+            android:text="Guardar" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="finalizar"
+            android:text="Finalizar" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
