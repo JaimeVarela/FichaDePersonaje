@@ -11,7 +11,7 @@
     <string name="INT">INT</string>
     <string name="SAB">SAB</string>
     <string name="CAR">CAR</string>
-    <string name="StatsBt">Dados</string>
+    <string name="dadosBt">Dados</string>
     <string name="nombre">Nombre</string>
     <string name="raza">Raza</string>
     <string name="clase">Clase</string>

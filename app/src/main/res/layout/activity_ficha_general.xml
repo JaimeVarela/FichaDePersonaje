@@ -1,770 +1,730 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".FichaGeneral">
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="60dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.00999999">
+        android:layout_height="0dp"
+        android:layout_weight="10">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="6dp"
             android:orientation="vertical">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            //imagen, nombre, raza, clase
+
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:context=".FichaGeneral">
+                android:layout_height="match_parent"
+                android:layout_margin="6dp"
+                android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imageView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginTop="12dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    tools:srcCompat="@tools:sample/avatars[0]" />
 
-                <TextView
-                    android:id="@+id/text1"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="160dp"
-                    android:layout_marginLeft="160dp"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/nombre"
-                    android:textSize="12sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:layout_margin="6dp"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/text2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="160dp"
-                    android:layout_marginLeft="160dp"
-                    android:layout_marginTop="40dp"
-                    android:text="@string/raza"
-                    android:textSize="12sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/text1" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/nombre"
+                        android:textSize="12sp" />
 
-                <TextView
-                    android:id="@+id/text3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="160dp"
-                    android:layout_marginLeft="160dp"
-                    android:layout_marginTop="40dp"
-                    android:text="@string/clase"
-                    android:textSize="12sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/text2" />
+                    <TextView
+                        android:id="@+id/nombre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
 
-                <TextView
-                    android:id="@+id/nombre"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    app:layout_constraintStart_toStartOf="@+id/text1"
-                    app:layout_constraintTop_toBottomOf="@+id/text1" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/raza"
+                        android:textSize="12sp" />
 
-                <TextView
-                    android:id="@+id/raza"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    app:layout_constraintStart_toStartOf="@+id/text2"
-                    app:layout_constraintTop_toBottomOf="@+id/text2" />
+                    <TextView
+                        android:id="@+id/raza"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
 
-                <TextView
-                    android:id="@+id/clase"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    app:layout_constraintStart_toStartOf="@+id/text3"
-                    app:layout_constraintTop_toBottomOf="@+id/text3" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/clase"
+                        android:textSize="12sp" />
 
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="24dp"
-                    android:text="@string/stats"
-                    android:textSize="24sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/clase" />
+                    <TextView
+                        android:id="@+id/clase"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/text13"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginTop="24dp"
-                    android:text="@string/NV"
-                    android:textSize="12sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView3" />
+            </LinearLayout>
 
-                <TextView
-                    android:id="@+id/NV"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    app:layout_constraintStart_toStartOf="@+id/text13"
-                    app:layout_constraintTop_toBottomOf="@+id/text13" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:text="@string/stats"
+                android:textAlignment="center"
+                android:textSize="24sp" />
 
-                <TextView
-                    android:id="@+id/text14"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="48dp"
-                    android:layout_marginLeft="48dp"
-                    android:layout_marginTop="24dp"
-                    android:text="@string/EXP"
-                    android:textSize="12sp"
-                    app:layout_constraintStart_toEndOf="@+id/text13"
-                    app:layout_constraintTop_toBottomOf="@+id/textView3" />
+            //NV, EXP
 
-                <TextView
-                    android:id="@+id/EXP"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    app:layout_constraintStart_toStartOf="@+id/text14"
-                    app:layout_constraintTop_toBottomOf="@+id/text14" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/text6"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginTop="12dp"
-                    android:text="@string/PG"
-                    android:textSize="12sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/NV" />
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/PG"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    app:layout_constraintStart_toStartOf="@+id/text6"
-                    app:layout_constraintTop_toBottomOf="@+id/text6" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/NV"
+                        android:textSize="12sp" />
 
-                <TextView
-                    android:id="@+id/text9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginTop="12dp"
-                    android:text="@string/CA"
-                    android:textSize="12sp"
-                    app:layout_constraintStart_toEndOf="@+id/text6"
-                    app:layout_constraintTop_toBottomOf="@+id/NV" />
+                    <TextView
+                        android:id="@+id/NV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
 
-                <TextView
-                    android:id="@+id/CA"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    app:layout_constraintStart_toStartOf="@+id/text9"
-                    app:layout_constraintTop_toBottomOf="@+id/text9" />
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/text10"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginTop="12dp"
-                    android:text="@string/VEL"
-                    android:textSize="12sp"
-                    app:layout_constraintStart_toEndOf="@+id/text9"
-                    app:layout_constraintTop_toBottomOf="@+id/NV" />
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/VEL"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    app:layout_constraintStart_toStartOf="@+id/text10"
-                    app:layout_constraintTop_toBottomOf="@+id/text10" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/EXP"
+                        android:textSize="12sp" />
 
-                <TextView
-                    android:id="@+id/text4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginTop="12dp"
-                    android:text="@string/FUE"
-                    android:textSize="12sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/PG" />
+                    <TextView
+                        android:id="@+id/EXP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
 
-                <TextView
-                    android:id="@+id/text7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="36dp"
-                    android:layout_marginLeft="36dp"
-                    android:layout_marginTop="12dp"
-                    android:text="@string/DES"
-                    android:textSize="12sp"
-                    app:layout_constraintStart_toEndOf="@+id/text4"
-                    app:layout_constraintTop_toBottomOf="@+id/PG" />
+                </LinearLayout>
+            </LinearLayout>
 
-                <TextView
-                    android:id="@+id/text12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="36dp"
-                    android:layout_marginLeft="36dp"
-                    android:layout_marginTop="12dp"
-                    android:text="@string/CON"
-                    android:textSize="12sp"
-                    app:layout_constraintStart_toEndOf="@+id/text7"
-                    app:layout_constraintTop_toBottomOf="@+id/PG" />
+            //PG, CA, VEL
 
-                <TextView
-                    android:id="@+id/text5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="36dp"
-                    android:layout_marginLeft="36dp"
-                    android:layout_marginTop="12dp"
-                    android:text="@string/INT"
-                    android:textSize="12sp"
-                    app:layout_constraintStart_toEndOf="@+id/text12"
-                    app:layout_constraintTop_toBottomOf="@+id/PG" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/text11"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="36dp"
-                    android:layout_marginLeft="36dp"
-                    android:layout_marginTop="12dp"
-                    android:text="@string/CAR"
-                    android:textSize="12sp"
-                    app:layout_constraintStart_toEndOf="@+id/text8"
-                    app:layout_constraintTop_toBottomOf="@+id/PG" />
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/INT"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    app:layout_constraintStart_toStartOf="@+id/text5"
-                    app:layout_constraintTop_toBottomOf="@+id/text5" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/PG"
+                        android:textSize="12sp" />
 
-                <TextView
-                    android:id="@+id/SAB"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    app:layout_constraintStart_toStartOf="@+id/text8"
-                    app:layout_constraintTop_toBottomOf="@+id/text8" />
+                    <TextView
+                        android:id="@+id/PG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
 
-                <TextView
-                    android:id="@+id/CAR"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    app:layout_constraintStart_toStartOf="@+id/text11"
-                    app:layout_constraintTop_toBottomOf="@+id/text11" />
 
-                <TextView
-                    android:id="@+id/text8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="36dp"
-                    android:layout_marginLeft="36dp"
-                    android:layout_marginTop="12dp"
-                    android:text="@string/SAB"
-                    android:textSize="12sp"
-                    app:layout_constraintStart_toEndOf="@+id/text5"
-                    app:layout_constraintTop_toBottomOf="@+id/PG" />
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/FUE"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    app:layout_constraintStart_toStartOf="@+id/text4"
-                    app:layout_constraintTop_toBottomOf="@+id/text4" />
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/DES"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    app:layout_constraintStart_toStartOf="@+id/text7"
-                    app:layout_constraintTop_toBottomOf="@+id/text7" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/CA"
+                        android:textSize="12sp" />
 
-                <TextView
-                    android:id="@+id/CON"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    app:layout_constraintStart_toStartOf="@+id/text12"
-                    app:layout_constraintTop_toBottomOf="@+id/text12" />
+                    <TextView
+                        android:id="@+id/CA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
 
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="wrap_content"
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="24dp"
-                    android:text="@string/salvacion"
-                    android:textSize="24sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/FUE" />
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/VEL"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/VEL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            //FUE, DES, CON, INT, SAB, CAR
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/FUE"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/FUE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/DES"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/DES"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/CON"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/CON"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/INT"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/INT"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/SAB"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/SAB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/CAR"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/CAR"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:text="@string/salvacion"
+                android:textAlignment="center"
+                android:textSize="24sp" />
+
+            //FUE, DES, CON, INT, SAB, CAR
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
                 <CheckBox
                     android:id="@+id/FUEcb"
-                    android:layout_width="wrap_content"
+                    android:theme="@style/checkBoxFichaGeneral"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_weight="1"
                     android:clickable="false"
                     android:text="@string/FUE"
-                    android:textSize="18sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView4" />
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp" />
 
                 <CheckBox
                     android:id="@+id/DEScb"
-                    android:layout_width="wrap_content"
+                    android:theme="@style/checkBoxFichaGeneral"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_weight="1"
                     android:clickable="false"
                     android:text="@string/DES"
-                    android:textSize="18sp"
-                    app:layout_constraintStart_toEndOf="@+id/FUEcb"
-                    app:layout_constraintTop_toBottomOf="@+id/textView4" />
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp" />
 
                 <CheckBox
                     android:id="@+id/CONcb"
-                    android:layout_width="wrap_content"
+                    android:theme="@style/checkBoxFichaGeneral"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_weight="1"
                     android:clickable="false"
                     android:text="@string/CON"
-                    android:textSize="18sp"
-                    app:layout_constraintStart_toEndOf="@+id/DEScb"
-                    app:layout_constraintTop_toBottomOf="@+id/textView4" />
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp" />
 
                 <CheckBox
                     android:id="@+id/INTcb"
-                    android:layout_width="wrap_content"
+                    android:theme="@style/checkBoxFichaGeneral"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
+                    android:layout_weight="1"
                     android:clickable="false"
                     android:text="@string/INT"
-                    android:textSize="18sp"
-                    app:layout_constraintStart_toStartOf="@+id/FUEcb"
-                    app:layout_constraintTop_toBottomOf="@+id/FUEcb" />
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp" />
 
                 <CheckBox
                     android:id="@+id/SABcb"
-                    android:layout_width="wrap_content"
+                    android:theme="@style/checkBoxFichaGeneral"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
+                    android:layout_weight="1"
                     android:clickable="false"
                     android:text="@string/SAB"
-                    android:textSize="18sp"
-                    app:layout_constraintStart_toStartOf="@+id/DEScb"
-                    app:layout_constraintTop_toBottomOf="@+id/DEScb" />
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp" />
 
                 <CheckBox
                     android:id="@+id/CARcb"
-                    android:layout_width="wrap_content"
+                    android:theme="@style/checkBoxFichaGeneral"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
+                    android:layout_weight="1"
                     android:clickable="false"
                     android:text="@string/CAR"
-                    android:textSize="18sp"
-                    app:layout_constraintStart_toStartOf="@+id/CONcb"
-                    app:layout_constraintTop_toBottomOf="@+id/CONcb" />
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp" />
 
-                <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="24dp"
-                    android:text="@string/habilidades"
-                    android:textSize="24sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/INTcb" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:text="@string/habilidades"
+                android:textAlignment="center"
+                android:textSize="24sp" />
+
+            //HABILIDADES
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                //Lista 1
 
                 <TableLayout
-                    android:id="@+id/tableLayout2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginTop="24dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView5">
+                    android:layout_weight="1">
 
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                    //Acrobacias
+
+                    <TableRow>
 
                         <TextView
-                            android:id="@+id/text15"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
                             android:text="@string/acrobacias"
                             android:textSize="18sp" />
 
                         <TextView
                             android:id="@+id/acrobacias"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="18sp" />
+                            android:textSize="18sp"/>
+
                     </TableRow>
 
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                    //Arcanos
+
+                    <TableRow>
 
                         <TextView
-                            android:id="@+id/text18"
-                            android:layout_span="1"
-                            android:text="@string/atletismo"
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:id="@+id/atletismo"
-                            android:layout_span="1"
-                            android:textSize="18sp" />
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <TextView
-                            android:id="@+id/text17"
-                            android:layout_span="1"
                             android:text="@string/arcanos"
                             android:textSize="18sp" />
 
                         <TextView
                             android:id="@+id/arcanos"
-                            android:layout_span="1"
                             android:textSize="18sp" />
+
                     </TableRow>
 
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                    //Atletismo
+
+                    <TableRow>
 
                         <TextView
-                            android:id="@+id/text20"
-                            android:layout_span="1"
+                            android:text="@string/atletismo"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/atletismo"
+                            android:textSize="18sp" />
+
+                    </TableRow>
+
+                    //Engañar
+
+                    <TableRow>
+
+                        <TextView
                             android:text="@string/engañar"
                             android:textSize="18sp" />
 
                         <TextView
                             android:id="@+id/engañar"
-                            android:layout_span="1"
                             android:textSize="18sp" />
+
                     </TableRow>
 
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                    //Historia
+
+                    <TableRow>
 
                         <TextView
-                            android:id="@+id/text33"
-                            android:layout_span="1"
                             android:text="@string/historia"
                             android:textSize="18sp" />
 
                         <TextView
                             android:id="@+id/historia"
-                            android:layout_span="1"
                             android:textSize="18sp" />
+
                     </TableRow>
 
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                    //Interpretación
+
+                    <TableRow>
 
                         <TextView
-                            android:id="@+id/text21"
-                            android:layout_span="1"
                             android:text="@string/interpretacion"
                             android:textSize="18sp" />
 
                         <TextView
                             android:id="@+id/interpretacion"
-                            android:layout_span="1"
                             android:textSize="18sp" />
+
                     </TableRow>
 
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                    //Intimidar
+
+                    <TableRow>
 
                         <TextView
-                            android:id="@+id/text22"
-                            android:layout_span="1"
                             android:text="@string/intimidar"
                             android:textSize="18sp" />
 
                         <TextView
                             android:id="@+id/intimidar"
-                            android:layout_span="1"
                             android:textSize="18sp" />
+
                     </TableRow>
 
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                    //Investigación
+
+                    <TableRow>
 
                         <TextView
-                            android:id="@+id/text23"
-                            android:layout_span="1"
                             android:text="@string/investigacion"
                             android:textSize="18sp" />
 
                         <TextView
                             android:id="@+id/investigacion"
-                            android:layout_span="1"
                             android:textSize="18sp" />
+
                     </TableRow>
 
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                    //Juego de manos
+
+                    <TableRow>
 
                         <TextView
-                            android:id="@+id/text24"
-                            android:layout_span="1"
                             android:text="@string/juegoDeManos"
                             android:textSize="18sp" />
 
                         <TextView
                             android:id="@+id/juegoDeManos"
-                            android:layout_span="1"
                             android:textSize="18sp" />
+
                     </TableRow>
 
                 </TableLayout>
 
-                <TableLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="200dp"
-                    android:layout_marginLeft="200dp"
-                    android:layout_marginTop="24dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView5">
+                //Lista 2
 
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                <TableLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    //Medicina
+
+                    <TableRow>
 
                         <TextView
-                            android:id="@+id/text25"
-                            android:layout_span="1"
                             android:text="@string/medicina"
                             android:textSize="18sp" />
 
                         <TextView
                             android:id="@+id/medicina"
-                            android:layout_span="1"
                             android:textSize="18sp" />
+
                     </TableRow>
 
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                    //Naturaleza
+
+                    <TableRow>
 
                         <TextView
-                            android:id="@+id/text26"
-                            android:layout_span="1"
                             android:text="@string/naturaleza"
                             android:textSize="18sp" />
 
                         <TextView
                             android:id="@+id/naturaleza"
-                            android:layout_span="1"
                             android:textSize="18sp" />
+
                     </TableRow>
 
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                    //Percepción
+
+                    <TableRow>
 
                         <TextView
-                            android:id="@+id/text27"
-                            android:layout_span="1"
                             android:text="@string/percepcion"
                             android:textSize="18sp" />
 
                         <TextView
                             android:id="@+id/percepcion"
-                            android:layout_span="1"
                             android:textSize="18sp" />
+
                     </TableRow>
 
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                    //Perspicacia
+
+                    <TableRow>
 
                         <TextView
-                            android:id="@+id/text28"
-                            android:layout_span="1"
                             android:text="@string/perspicacia"
                             android:textSize="18sp" />
 
                         <TextView
                             android:id="@+id/perspicacia"
-                            android:layout_span="1"
                             android:textSize="18sp" />
+
                     </TableRow>
 
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                    //Persuasión
+
+                    <TableRow>
 
                         <TextView
-                            android:id="@+id/text34"
-                            android:layout_span="1"
                             android:text="@string/persuasion"
                             android:textSize="18sp" />
 
                         <TextView
                             android:id="@+id/persuasion"
-                            android:layout_span="1"
                             android:textSize="18sp" />
+
                     </TableRow>
 
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                    //Religión
+
+                    <TableRow>
 
                         <TextView
-                            android:id="@+id/text29"
-                            android:layout_span="1"
                             android:text="@string/religion"
                             android:textSize="18sp" />
 
                         <TextView
                             android:id="@+id/religion"
-                            android:layout_span="1"
                             android:textSize="18sp" />
+
                     </TableRow>
 
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                    //Sigilo
+
+                    <TableRow>
 
                         <TextView
-                            android:id="@+id/text30"
-                            android:layout_span="1"
                             android:text="@string/sigilo"
                             android:textSize="18sp" />
 
                         <TextView
                             android:id="@+id/sigilo"
-                            android:layout_span="1"
                             android:textSize="18sp" />
+
                     </TableRow>
 
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                    //Supervivencia
+
+                    <TableRow>
 
                         <TextView
-                            android:id="@+id/text31"
-                            android:layout_span="1"
                             android:text="@string/supervivencia"
                             android:textSize="18sp" />
 
                         <TextView
                             android:id="@+id/supervivencia"
-                            android:layout_span="1"
                             android:textSize="18sp" />
+
                     </TableRow>
 
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                    //Trato con animales
+
+                    <TableRow>
 
                         <TextView
-                            android:id="@+id/text32"
-                            android:layout_span="1"
                             android:text="@string/tratoConAnimales"
                             android:textSize="18sp" />
 
                         <TextView
                             android:id="@+id/tratoConAnimales"
-                            android:layout_span="1"
                             android:textSize="18sp" />
+
                     </TableRow>
 
                 </TableLayout>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
         </LinearLayout>
+
     </ScrollView>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
-        android:layout_marginBottom="12dp"
+    <RelativeLayout
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/volver"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="editar"
-            android:text="Editar" />
+            android:layout_alignParentRight="true"
+            android:text="volver"/>
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/editar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="volver"
-            android:text="Volver" />
-    </LinearLayout>
+            android:layout_toLeftOf="@+id/volver"
+            android:text="editar"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+
+</LinearLayout>

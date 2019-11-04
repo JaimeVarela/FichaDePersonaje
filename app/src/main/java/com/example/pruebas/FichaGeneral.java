@@ -20,12 +20,13 @@ public class FichaGeneral extends AppCompatActivity implements View.OnClickListe
     private TextView[] stats;
     private ArrayList<CheckBox> salvacion;
     private ArrayList<TextView> habilidades;
+    private String[] habilidadesCb;
     private Button volver, editar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.pruebas);
+        setContentView(R.layout.activity_ficha_general);
 
         asociar();
         iniciar();
@@ -139,7 +140,9 @@ public class FichaGeneral extends AppCompatActivity implements View.OnClickListe
                 salvacion.get(i).setChecked(Boolean.parseBoolean(fila.getString(i + 14)));
             }
 
+            habilidadesCb = new String[habilidades.size()];
             for(int i = 0; i < habilidades.size(); i++){
+                habilidadesCb[i] = fila.getString(i + 20);
                 int valor = Habilidades.HabilidadStat(statsValue, i, Boolean.parseBoolean(fila.getString(i + 20)));
                 if(valor >= 0)
                     habilidades.get(i).setText(String.format("+%s", String.valueOf(valor)));
@@ -184,11 +187,15 @@ public class FichaGeneral extends AppCompatActivity implements View.OnClickListe
             statsValue[i] = stats[i].getText().toString();
         }
         otra.putExtra("stats", statsValue);
+
         String[] statsSalv = new String[stats.length];
         for(int i = 0; i < statsSalv.length; i++){
             statsSalv[i] = String.valueOf(salvacion.get(i).isChecked());
         }
         otra.putExtra("statsSalv", statsSalv);
+
+        otra.putExtra("habilidadesCb", habilidadesCb);
+
         startActivity(otra);
     }
 

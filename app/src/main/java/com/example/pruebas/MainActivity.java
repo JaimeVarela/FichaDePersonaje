@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -18,7 +19,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText nombre, pg, ca, vel, nv, exp;
     private Spinner raza, clase;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView dados;
     private ArrayList<CheckBox> salvacion;
     private ArrayList<CheckBox> habilidades;
+    private Button dadosBt, guardar, finalizar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         asociar();
         iniciar();
+        eventos();
     }
 
     private void asociar(){
@@ -82,11 +85,15 @@ public class MainActivity extends AppCompatActivity {
         habilidades.add((CheckBox)findViewById(R.id.sigiloCb));
         habilidades.add((CheckBox)findViewById(R.id.supervivenciaCb));
         habilidades.add((CheckBox)findViewById(R.id.tratoConAnimalesCb));
+
+        dadosBt = (Button)findViewById(R.id.dadosBt);
+        guardar = (Button)findViewById(R.id.guardar);
+        finalizar = (Button)findViewById(R.id.finalizar);
     }
 
     private void iniciar(){
         //Asociación de mi spn con el control spn1 en la vista
-        raza = (Spinner)findViewById(R.id.spn1);
+        raza = (Spinner)findViewById(R.id.raza);
         //Ahora hay que crear un adaptador entre el array de opciones
         //y el control Spinner
         ArrayAdapter<String> adaptador =
@@ -94,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
         raza.setAdapter(adaptador);
 
         //Asociación de mi spn con el control spn1 en la vista
-        clase = (Spinner)findViewById(R.id.spn2);
+        clase = (Spinner)findViewById(R.id.clase);
         //Ahora hay que crear un adaptador entre el array de opciones
         //y el control Spinner
         ArrayAdapter<String> adaptador2 =
@@ -102,6 +109,11 @@ public class MainActivity extends AppCompatActivity {
         clase.setAdapter(adaptador2);
 
         mostrar_datos();
+    }
+
+    private void eventos(){
+        guardar.setOnClickListener(this);
+        finalizar.setOnClickListener(this);
     }
 
     private void mostrar_datos(){
@@ -140,6 +152,11 @@ public class MainActivity extends AppCompatActivity {
             for(int i = 0; i < statsSalv.length; i++){
                 salvacion.get(i).setChecked(Boolean.parseBoolean(statsSalv[i]));
             }
+        }
+
+        String[] habilidadesCb = getIntent().getStringArrayExtra("habilidadesCb");
+        for(int i = 0; i < habilidadesCb.length; i++){
+            habilidades.get(i).setChecked(Boolean.parseBoolean(habilidadesCb[i]));
         }
     }
 
@@ -233,7 +250,7 @@ public class MainActivity extends AppCompatActivity {
         return fila;
     }
 
-    public void guardar(View vista){
+    private void guardar(){
 
         Personaje pj = new Personaje
                 (this, Personaje.DATABASE_NAME, null, Personaje.DATABASE_VERSION);
@@ -258,7 +275,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void finalizar(View vista){
+    private void finalizar(){
 
         //Enlace con otra actividad
         Intent otra = new Intent(this, FichaGeneral.class);
@@ -279,5 +296,17 @@ public class MainActivity extends AppCompatActivity {
 
     private void toast(String texto){
         Toast.makeText(this, texto, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.guardar:
+                guardar();
+                break;
+            case R.id.finalizar:
+                finalizar();
+                break;
+        }
     }
 }
