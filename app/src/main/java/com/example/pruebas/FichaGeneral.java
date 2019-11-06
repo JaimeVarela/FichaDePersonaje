@@ -20,6 +20,7 @@ public class FichaGeneral extends AppCompatActivity implements View.OnClickListe
     private TextView[] stats;
     private ArrayList<CheckBox> salvacion;
     private ArrayList<TextView> habilidades;
+    private int habBonus;
     private String[] habilidadesCb;
     private Button volver, editar;
 
@@ -103,7 +104,7 @@ public class FichaGeneral extends AppCompatActivity implements View.OnClickListe
             //WHERE codigo = codigo_tecleado
             Cursor fila = BaseDeDatos.rawQuery
                     ("select nombre, raza, clase, nv, exp, PG, CA, VEL, FUE, DES, CON, INT, SAB, CAR," +
-                            " FUEsalv, DESsalv, CONsalv, INTsalv, SABsalv, CARsalv, " +
+                            " FUEsalv, DESsalv, CONsalv, INTsalv, SABsalv, CARsalv, habBonus, " +
                             "acrobacias text, arcanos text, atletismo text, engañar text, historia text, interpretacion text," +
                             "intimidar text, investigacion text, juegoDeManos text, medicina text, naturaleza text," +
                             "percepcion text, perspicacia text, persuasion text, religion text, sigilo text, supervivencia text," +
@@ -112,6 +113,7 @@ public class FichaGeneral extends AppCompatActivity implements View.OnClickListe
 
             if (!fila.moveToFirst()) {
                 toast("No existe ningún personaje");
+                habBonus = 0; //Por defecto
                 return;
             }
 
@@ -140,10 +142,12 @@ public class FichaGeneral extends AppCompatActivity implements View.OnClickListe
                 salvacion.get(i).setChecked(Boolean.parseBoolean(fila.getString(i + 14)));
             }
 
+            habBonus = Integer.parseInt(fila.getString(20));
+
             habilidadesCb = new String[habilidades.size()];
             for(int i = 0; i < habilidades.size(); i++){
-                habilidadesCb[i] = fila.getString(i + 20);
-                int valor = Habilidades.HabilidadStat(statsValue, i, Boolean.parseBoolean(fila.getString(i + 20)));
+                habilidadesCb[i] = fila.getString(i + 21);
+                int valor = Habilidades.HabilidadStat(statsValue, i, habBonus, Boolean.parseBoolean(fila.getString(i + 21)));
                 if(valor >= 0)
                     habilidades.get(i).setText(String.format("+%s", String.valueOf(valor)));
                 else
@@ -193,6 +197,8 @@ public class FichaGeneral extends AppCompatActivity implements View.OnClickListe
             statsSalv[i] = String.valueOf(salvacion.get(i).isChecked());
         }
         otra.putExtra("statsSalv", statsSalv);
+
+        otra.putExtra("habBonus", String.valueOf(habBonus));
 
         otra.putExtra("habilidadesCb", habilidadesCb);
 

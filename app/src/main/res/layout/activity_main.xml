@@ -65,6 +65,7 @@
 
                     <EditText
                         android:id="@+id/NV"
+                        android:inputType="number"
                         android:maxLength="2"
                         android:textSize="18sp"/>
 
@@ -79,6 +80,7 @@
 
                     <EditText
                         android:id="@+id/EXP"
+                        android:inputType="number"
                         android:textSize="18sp"/>
 
                 </TableRow>
@@ -92,6 +94,7 @@
 
                     <EditText
                         android:id="@+id/PG"
+                        android:inputType="number"
                         android:maxLength="3"
                         android:textSize="18sp"/>
 
@@ -106,6 +109,7 @@
 
                     <EditText
                         android:id="@+id/CA"
+                        android:inputType="number"
                         android:maxLength="2"
                         android:textSize="18sp"/>
 
@@ -120,6 +124,7 @@
 
                     <EditText
                         android:id="@+id/VEL"
+                        android:inputType="number"
                         android:maxLength="2"
                         android:textSize="18sp"/>
 
@@ -248,8 +253,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/salvacion"
-                android:textSize="24sp"/>
+                android:text="Tiradas de Salvación Bonus"
+                android:textSize="18sp"/>
 
             //FUE, DES, CON, INT, SAB, CAR
             <LinearLayout
@@ -307,12 +312,26 @@
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Habilidades"
-                android:textSize="24sp" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Habilidades Bonus"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/habBonus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="2"/>
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"

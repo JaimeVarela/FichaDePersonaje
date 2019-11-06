@@ -2,7 +2,6 @@ package com.example.pruebas;
 
 public class Habilidades {
 
-    public static int valorBonus = 2;
     public static String[] habilidadesBonus = {
             "DES", //Acrobacias
             "INT", //Arcanos
@@ -24,7 +23,7 @@ public class Habilidades {
             "SAB"  //Trato con animales
     };
 
-    public static int HabilidadStat(int[] statsValue, int i, boolean bonus){
+    public static int HabilidadStat(int[] statsValue, int i, int habBonus, boolean bonus){
         int valor = 0;
         switch (habilidadesBonus[i]){
             case "FUE":
@@ -47,7 +46,7 @@ public class Habilidades {
         }
 
         if(bonus)
-            valor += valorBonus;
+            valor += habBonus;
 
         return valor;
     }

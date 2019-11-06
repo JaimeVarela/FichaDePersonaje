@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ArrayList<EditText> stats;
     private TextView dados;
     private ArrayList<CheckBox> salvacion;
+    private EditText habBonus;
     private ArrayList<CheckBox> habilidades;
     private Button dadosBt, guardar, finalizar;
 
@@ -65,6 +66,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         salvacion.add((CheckBox)findViewById(R.id.INTcb));
         salvacion.add((CheckBox)findViewById(R.id.SABcb));
         salvacion.add((CheckBox)findViewById(R.id.CARcb));
+
+        habBonus = (EditText)findViewById(R.id.habBonus);
 
         habilidades = new ArrayList<CheckBox>();
         habilidades.add((CheckBox)findViewById(R.id.acrobaciasCb));
@@ -154,10 +157,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
 
+        habBonus.setText(getIntent().getStringExtra("habBonus"));
+
         String[] habilidadesCb = getIntent().getStringArrayExtra("habilidadesCb");
-        for(int i = 0; i < habilidadesCb.length; i++){
-            habilidades.get(i).setChecked(Boolean.parseBoolean(habilidadesCb[i]));
-        }
+        if(habilidadesCb != null)
+            for(int i = 0; i < habilidadesCb.length; i++){
+                habilidades.get(i).setChecked(Boolean.parseBoolean(habilidadesCb[i]));
+            }
     }
 
     public void calcular(View vista){
@@ -229,6 +235,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fila.put("INTsalv", String.valueOf(salvacion.get(3).isChecked()));
         fila.put("SABsalv", String.valueOf(salvacion.get(4).isChecked()));
         fila.put("CARsalv", String.valueOf(salvacion.get(5).isChecked()));
+        fila.put("habBonus", habBonus.getText().toString());
         fila.put("acrobacias", String.valueOf(habilidades.get(0).isChecked()));
         fila.put("arcanos", String.valueOf(habilidades.get(1).isChecked()));
         fila.put("atletismo", String.valueOf(habilidades.get(2).isChecked()));
