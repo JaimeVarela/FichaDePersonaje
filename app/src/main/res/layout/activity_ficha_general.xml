@@ -344,73 +344,128 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="6dp"
                 android:orientation="horizontal">
 
-                <CheckBox
-                    android:id="@+id/FUEcb"
-                    android:theme="@style/checkBoxFichaGeneral"
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:clickable="false"
-                    android:text="@string/FUE"
-                    android:textColor="@android:color/black"
-                    android:textSize="12sp" />
+                    android:orientation="vertical">
 
-                <CheckBox
-                    android:id="@+id/DEScb"
-                    android:theme="@style/checkBoxFichaGeneral"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:clickable="false"
-                    android:text="@string/DES"
-                    android:textColor="@android:color/black"
-                    android:textSize="12sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/FUE"
+                        android:textSize="12sp" />
 
-                <CheckBox
-                    android:id="@+id/CONcb"
-                    android:theme="@style/checkBoxFichaGeneral"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:clickable="false"
-                    android:text="@string/CON"
-                    android:textColor="@android:color/black"
-                    android:textSize="12sp" />
+                    <TextView
+                        android:id="@+id/FUEsalv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
 
-                <CheckBox
-                    android:id="@+id/INTcb"
-                    android:theme="@style/checkBoxFichaGeneral"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:clickable="false"
-                    android:text="@string/INT"
-                    android:textColor="@android:color/black"
-                    android:textSize="12sp" />
+                </LinearLayout>
 
-                <CheckBox
-                    android:id="@+id/SABcb"
-                    android:theme="@style/checkBoxFichaGeneral"
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:clickable="false"
-                    android:text="@string/SAB"
-                    android:textColor="@android:color/black"
-                    android:textSize="12sp" />
+                    android:orientation="vertical">
 
-                <CheckBox
-                    android:id="@+id/CARcb"
-                    android:theme="@style/checkBoxFichaGeneral"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/DES"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/DESsalv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:clickable="false"
-                    android:text="@string/CAR"
-                    android:textColor="@android:color/black"
-                    android:textSize="12sp" />
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/CON"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/CONsalv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/INT"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/INTsalv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/SAB"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/SABsalv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/CAR"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/CARsalv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
 
             </LinearLayout>
 

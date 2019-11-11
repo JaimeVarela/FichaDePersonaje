@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Spinner raza, clase;
     private ArrayList<EditText> stats;
     private TextView dados;
+    private EditText salvBonus;
     private ArrayList<CheckBox> salvacion;
     private EditText habBonus;
     private ArrayList<CheckBox> habilidades;
@@ -58,6 +59,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         stats.add((EditText)findViewById(R.id.CARvalor));
 
         dados = (TextView)findViewById(R.id.dados);
+
+        salvBonus = (EditText)findViewById(R.id.salvBonus);
 
         salvacion = new ArrayList<CheckBox>();
         salvacion.add((CheckBox)findViewById(R.id.FUEcb));
@@ -150,8 +153,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ca.setText(getIntent().getStringExtra("ca"));
         vel.setText(getIntent().getStringExtra("vel"));
 
-        if(getIntent().getStringArrayExtra("stats") != null){
-            String[] statsSalv = getIntent().getStringArrayExtra("statsSalv");
+        String[] statsSalv = getIntent().getStringArrayExtra("statsSalv");
+        if(statsSalv != null){
             for(int i = 0; i < statsSalv.length; i++){
                 salvacion.get(i).setChecked(Boolean.parseBoolean(statsSalv[i]));
             }
@@ -229,6 +232,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fila.put("INT", stats.get(3).getText().toString());
         fila.put("SAB", stats.get(4).getText().toString());
         fila.put("CAR", stats.get(5).getText().toString());
+        fila.put("salvBonus", salvBonus.getText().toString());
         fila.put("FUEsalv", String.valueOf(salvacion.get(0).isChecked()));
         fila.put("DESsalv", String.valueOf(salvacion.get(1).isChecked()));
         fila.put("CONsalv", String.valueOf(salvacion.get(2).isChecked()));

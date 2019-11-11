@@ -18,7 +18,9 @@ public class FichaGeneral extends AppCompatActivity implements View.OnClickListe
 
     private TextView nombre, raza, clase, pg, ca, vel, nv, exp;
     private TextView[] stats;
-    private ArrayList<CheckBox> salvacion;
+    private ArrayList<TextView> salvacion;
+    private int salvBonus;
+    private String[] salvacionCb;
     private ArrayList<TextView> habilidades;
     private int habBonus;
     private String[] habilidadesCb;
@@ -52,13 +54,13 @@ public class FichaGeneral extends AppCompatActivity implements View.OnClickListe
         stats[4] = (TextView)findViewById(R.id.SAB);
         stats[5] = (TextView)findViewById(R.id.CAR);
 
-        salvacion = new ArrayList<CheckBox>();
-        salvacion.add((CheckBox)findViewById(R.id.FUEcb));
-        salvacion.add((CheckBox)findViewById(R.id.DEScb));
-        salvacion.add((CheckBox)findViewById(R.id.CONcb));
-        salvacion.add((CheckBox)findViewById(R.id.INTcb));
-        salvacion.add((CheckBox)findViewById(R.id.SABcb));
-        salvacion.add((CheckBox)findViewById(R.id.CARcb));
+        salvacion = new ArrayList<TextView>();
+        salvacion.add((TextView)findViewById(R.id.FUEsalv));
+        salvacion.add((TextView)findViewById(R.id.DESsalv));
+        salvacion.add((TextView)findViewById(R.id.CONsalv));
+        salvacion.add((TextView)findViewById(R.id.INTsalv));
+        salvacion.add((TextView)findViewById(R.id.SABsalv));
+        salvacion.add((TextView)findViewById(R.id.CARsalv));
 
         habilidades = new ArrayList<TextView>();
         habilidades.add((TextView) findViewById(R.id.acrobacias));
@@ -104,7 +106,7 @@ public class FichaGeneral extends AppCompatActivity implements View.OnClickListe
             //WHERE codigo = codigo_tecleado
             Cursor fila = BaseDeDatos.rawQuery
                     ("select nombre, raza, clase, nv, exp, PG, CA, VEL, FUE, DES, CON, INT, SAB, CAR," +
-                            " FUEsalv, DESsalv, CONsalv, INTsalv, SABsalv, CARsalv, habBonus, " +
+                            " salvBonus, FUEsalv, DESsalv, CONsalv, INTsalv, SABsalv, CARsalv, habBonus, " +
                             "acrobacias text, arcanos text, atletismo text, engañar text, historia text, interpretacion text," +
                             "intimidar text, investigacion text, juegoDeManos text, medicina text, naturaleza text," +
                             "percepcion text, perspicacia text, persuasion text, religion text, sigilo text, supervivencia text," +
@@ -113,6 +115,7 @@ public class FichaGeneral extends AppCompatActivity implements View.OnClickListe
 
             if (!fila.moveToFirst()) {
                 toast("No existe ningún personaje");
+                salvBonus = 0; //Por defecto
                 habBonus = 0; //Por defecto
                 return;
             }
@@ -138,16 +141,29 @@ public class FichaGeneral extends AppCompatActivity implements View.OnClickListe
                     stats[i].setText(String.format("%s (%s)", fila.getString(i + 8), statsValue[i]));
             }
 
+
+            salvBonus = Integer.parseInt(fila.getString(14));
+
+            salvacionCb = new String[salvacion.size()];
             for(int i = 0; i < salvacion.size(); i++){
-                salvacion.get(i).setChecked(Boolean.parseBoolean(fila.getString(i + 14)));
+                salvacionCb[i] = fila.getString(i + 15);
+                int valor = statsValue[i];
+                if(Boolean.parseBoolean(salvacionCb[i]))
+                    valor += salvBonus;
+                if(valor >= 0)
+                    salvacion.get(i).setText(String.format("+%s", String.valueOf(valor)));
+                else
+                    salvacion.get(i).setText(String.valueOf(valor));
+
+
             }
 
-            habBonus = Integer.parseInt(fila.getString(20));
+            habBonus = Integer.parseInt(fila.getString(21));
 
             habilidadesCb = new String[habilidades.size()];
             for(int i = 0; i < habilidades.size(); i++){
-                habilidadesCb[i] = fila.getString(i + 21);
-                int valor = Habilidades.HabilidadStat(statsValue, i, habBonus, Boolean.parseBoolean(fila.getString(i + 21)));
+                habilidadesCb[i] = fila.getString(i + 22);
+                int valor = Habilidades.HabilidadStat(statsValue, i, habBonus, Boolean.parseBoolean(habilidadesCb[i]));
                 if(valor >= 0)
                     habilidades.get(i).setText(String.format("+%s", String.valueOf(valor)));
                 else
@@ -157,7 +173,7 @@ public class FichaGeneral extends AppCompatActivity implements View.OnClickListe
             BaseDeDatos.close();
 
         }catch (Exception ex){
-            toast("Error al cargar los datos");
+            toast("Error al cargar los datos " + ex.getMessage());
             //Cerramos la conexión
             BaseDeDatos.close();
         }
@@ -192,11 +208,9 @@ public class FichaGeneral extends AppCompatActivity implements View.OnClickListe
         }
         otra.putExtra("stats", statsValue);
 
-        String[] statsSalv = new String[stats.length];
-        for(int i = 0; i < statsSalv.length; i++){
-            statsSalv[i] = String.valueOf(salvacion.get(i).isChecked());
-        }
-        otra.putExtra("statsSalv", statsSalv);
+        otra.putExtra("salvBonus", String.valueOf(salvBonus));
+
+        otra.putExtra("statsSalv", salvacionCb);
 
         otra.putExtra("habBonus", String.valueOf(habBonus));
 
