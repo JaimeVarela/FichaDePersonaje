@@ -7,434 +7,753 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="10">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="6dp">
+            android:orientation="vertical">
 
-            <TableLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            //imagen, nombre, raza, clase
 
-                <TableRow>
-
-                    <TextView
-                        android:text="@string/nombre"
-                        android:textSize="18sp"/>
-
-                    <EditText
-                        android:id="@+id/nombre"
-                        android:textSize="18sp"/>
-
-                </TableRow>
-
-                <TableRow>
-
-                    <TextView
-                        android:text="@string/raza"
-                        android:textSize="18sp"/>
-
-                    <Spinner
-                        android:id="@+id/raza"/>
-
-                </TableRow>
-
-                <TableRow>
-
-                    <TextView
-                        android:text="@string/clase"
-                        android:textSize="18sp"/>
-
-                    <Spinner
-                        android:id="@+id/clase"/>
-
-                </TableRow>
-
-                <TableRow>
-
-                    <TextView
-                        android:text="@string/NV"
-                        android:textSize="18sp"/>
-
-                    <EditText
-                        android:id="@+id/NV"
-                        android:maxLength="2"
-                        android:textSize="18sp"/>
-
-                </TableRow>
-
-                <TableRow>
-
-                    <TextView
-                        android:text="@string/EXP"
-                        android:textSize="18sp"/>
-
-                    <EditText
-                        android:id="@+id/EXP"
-                        android:textSize="18sp"/>
-
-                </TableRow>
-
-                <TableRow>
-
-                    <TextView
-                        android:text="@string/PG"
-                        android:textSize="18sp"/>
-
-                    <EditText
-                        android:id="@+id/PG"
-                        android:maxLength="3"
-                        android:textSize="18sp"/>
-
-                </TableRow>
-
-                <TableRow>
-
-                    <TextView
-                        android:text="@string/CA"
-                        android:textSize="18sp"/>
-
-                    <EditText
-                        android:id="@+id/CA"
-                        android:maxLength="2"
-                        android:textSize="18sp"/>
-
-                </TableRow>
-
-                <TableRow>
-
-                    <TextView
-                        android:text="@string/VEL"
-                        android:textSize="18sp"/>
-
-                    <EditText
-                        android:id="@+id/VEL"
-                        android:maxLength="2"
-                        android:textSize="18sp"/>
-
-                </TableRow>
-
-            </TableLayout>
-
-            <TableLayout
-                android:id="@+id/statsTableLayout"
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent"
+                android:layout_margin="6dp"
+                android:orientation="horizontal">
 
-                <TableRow
+                <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    tools:srcCompat="@tools:sample/avatars[0]" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/nombre"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/nombre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/raza"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/raza"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/clase"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/clase"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:text="@string/stats"
+                android:textAlignment="center"
+                android:textSize="24sp" />
+
+            //NV, EXP
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/NV"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/NV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/EXP"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/EXP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            //PG, CA, VEL
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/PG"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/PG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/CA"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/CA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/VEL"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/VEL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            //FUE, DES, CON, INT, SAB, CAR
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/FUE"
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/FUE"
-                        android:layout_span="1"
-                        android:text="@string/FUE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:textSize="18sp" />
 
-                    <EditText
-                        android:id="@+id/FUEvalor"
-                        android:layout_span="1"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/DES"
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/DES"
-                        android:layout_span="1"
-                        android:text="@string/DES"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:textSize="18sp" />
 
-                    <EditText
-                        android:id="@+id/DESvalor"
-                        android:layout_span="1"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/text12"
-                        android:layout_span="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="@string/CON"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/CON"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:textSize="18sp" />
 
-                    <EditText
-                        android:id="@+id/CONvalor"
-                        android:layout_span="1"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        android:textSize="18sp" />
+                </LinearLayout>
 
-                </TableRow>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                <TableRow
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/INT"
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/INT"
-                        android:layout_span="1"
-                        android:text="@string/INT"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:textSize="18sp" />
 
-                    <EditText
-                        android:id="@+id/INTvalor"
-                        android:layout_span="1"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/SAB"
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/SAB"
-                        android:layout_span="1"
-                        android:text="@string/SAB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:textSize="18sp" />
 
-                    <EditText
-                        android:id="@+id/SABvalor"
-                        android:layout_span="1"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/CAR"
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/CAR"
-                        android:layout_span="1"
-                        android:text="@string/CAR"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:textSize="18sp" />
 
-                    <EditText
-                        android:id="@+id/CARvalor"
-                        android:layout_span="1"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        android:textSize="18sp" />
+                </LinearLayout>
 
-                </TableRow>
-
-            </TableLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/dadosBt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="calcular"
-                    android:text="@string/dadosBt" />
-
-                <TextView
-                    android:id="@+id/dados"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="12dp"
-                    android:textSize="18sp" />
             </LinearLayout>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="12dp"
                 android:text="@string/salvacion"
-                android:textSize="24sp"/>
+                android:textAlignment="center"
+                android:textSize="24sp" />
 
             //FUE, DES, CON, INT, SAB, CAR
+
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:orientation="horizontal">
 
-                <CheckBox
-                    android:id="@+id/FUEcb"
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="FUE"
-                    android:textSize="12sp"/>
+                    android:orientation="vertical">
 
-                <CheckBox
-                    android:id="@+id/DEScb"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/FUE"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/FUEsalv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="DES"
-                    android:textSize="12sp"/>
+                    android:orientation="vertical">
 
-                <CheckBox
-                    android:id="@+id/CONcb"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/DES"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/DESsalv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="CON"
-                    android:textSize="12sp"/>
+                    android:orientation="vertical">
 
-                <CheckBox
-                    android:id="@+id/INTcb"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/CON"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/CONsalv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="INT"
-                    android:textSize="12sp"/>
+                    android:orientation="vertical">
 
-                <CheckBox
-                    android:id="@+id/SABcb"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/INT"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/INTsalv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="SAB"
-                    android:textSize="12sp"/>
+                    android:orientation="vertical">
 
-                <CheckBox
-                    android:id="@+id/CARcb"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/SAB"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/SABsalv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="CAR"
-                    android:textSize="12sp"/>
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/CAR"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/CARsalv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
+            //HABILIDADES
+
             <TextView
-                android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Habilidades"
+                android:layout_margin="12dp"
+                android:text="@string/habilidades"
+                android:textAlignment="center"
                 android:textSize="24sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:orientation="horizontal">
 
-                <CheckBox
-                    android:id="@+id/acrobaciasCb"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/acrobacias"
-                    android:textSize="18sp" />
+                //Lista 1
 
-                <CheckBox
-                    android:id="@+id/arcanosCb"
-                    android:layout_width="match_parent"
+                <TableLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/arcanos"
-                    android:textSize="18sp" />
+                    android:layout_weight="1">
 
-                <CheckBox
-                    android:id="@+id/atletismoCb"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/atletismo"
-                    android:textSize="18sp" />
+                    //Acrobacias
 
-                <CheckBox
-                    android:id="@+id/engañarCb"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/engañar"
-                    android:textSize="18sp" />
+                    <TableRow>
 
-                <CheckBox
-                    android:id="@+id/historiaCb"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/historia"
-                    android:textSize="18sp" />
+                        <TextView
+                            android:text="@string/acrobacias"
+                            android:textSize="18sp" />
 
-                <CheckBox
-                    android:id="@+id/interpretacionCb"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/interpretacion"
-                    android:textSize="18sp" />
+                        <TextView
+                            android:id="@+id/acrobacias"
+                            android:textSize="18sp"/>
 
-                <CheckBox
-                    android:id="@+id/intimidarCb"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/intimidar"
-                    android:textSize="18sp" />
+                    </TableRow>
 
-                <CheckBox
-                    android:id="@+id/investigacionCb"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/investigacion"
-                    android:textSize="18sp" />
+                    //Arcanos
 
-                <CheckBox
-                    android:id="@+id/juegoDeManosCb"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/juegoDeManos"
-                    android:textSize="18sp" />
+                    <TableRow>
 
-                <CheckBox
-                    android:id="@+id/medicinaCb"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/medicina"
-                    android:textSize="18sp" />
+                        <TextView
+                            android:text="@string/arcanos"
+                            android:textSize="18sp" />
 
-                <CheckBox
-                    android:id="@+id/naturalezaCb"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/naturaleza"
-                    android:textSize="18sp" />
+                        <TextView
+                            android:id="@+id/arcanos"
+                            android:textSize="18sp" />
 
-                <CheckBox
-                    android:id="@+id/percepcionCb"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/percepcion"
-                    android:textSize="18sp" />
+                    </TableRow>
 
-                <CheckBox
-                    android:id="@+id/perspicaciaCb"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/perspicacia"
-                    android:textSize="18sp" />
+                    //Atletismo
 
-                <CheckBox
-                    android:id="@+id/persuasionCb"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/persuasion"
-                    android:textSize="18sp" />
+                    <TableRow>
 
-                <CheckBox
-                    android:id="@+id/religionCb"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/religion"
-                    android:textSize="18sp" />
+                        <TextView
+                            android:text="@string/atletismo"
+                            android:textSize="18sp" />
 
-                <CheckBox
-                    android:id="@+id/sigiloCb"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/sigilo"
-                    android:textSize="18sp" />
+                        <TextView
+                            android:id="@+id/atletismo"
+                            android:textSize="18sp" />
 
-                <CheckBox
-                    android:id="@+id/supervivenciaCb"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/supervivencia"
-                    android:textSize="18sp" />
+                    </TableRow>
 
-                <CheckBox
-                    android:id="@+id/tratoConAnimalesCb"
-                    android:layout_width="match_parent"
+                    //Engañar
+
+                    <TableRow>
+
+                        <TextView
+                            android:text="@string/engañar"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/engañar"
+                            android:textSize="18sp" />
+
+                    </TableRow>
+
+                    //Historia
+
+                    <TableRow>
+
+                        <TextView
+                            android:text="@string/historia"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/historia"
+                            android:textSize="18sp" />
+
+                    </TableRow>
+
+                    //Interpretación
+
+                    <TableRow>
+
+                        <TextView
+                            android:text="@string/interpretacion"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/interpretacion"
+                            android:textSize="18sp" />
+
+                    </TableRow>
+
+                    //Intimidar
+
+                    <TableRow>
+
+                        <TextView
+                            android:text="@string/intimidar"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/intimidar"
+                            android:textSize="18sp" />
+
+                    </TableRow>
+
+                    //Investigación
+
+                    <TableRow>
+
+                        <TextView
+                            android:text="@string/investigacion"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/investigacion"
+                            android:textSize="18sp" />
+
+                    </TableRow>
+
+                    //Juego de manos
+
+                    <TableRow>
+
+                        <TextView
+                            android:text="@string/juegoDeManos"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/juegoDeManos"
+                            android:textSize="18sp" />
+
+                    </TableRow>
+
+                </TableLayout>
+
+                //Lista 2
+
+                <TableLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/tratoConAnimales"
-                    android:textSize="18sp" />
+                    android:layout_weight="1">
+
+                    //Medicina
+
+                    <TableRow>
+
+                        <TextView
+                            android:text="@string/medicina"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/medicina"
+                            android:textSize="18sp" />
+
+                    </TableRow>
+
+                    //Naturaleza
+
+                    <TableRow>
+
+                        <TextView
+                            android:text="@string/naturaleza"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/naturaleza"
+                            android:textSize="18sp" />
+
+                    </TableRow>
+
+                    //Percepción
+
+                    <TableRow>
+
+                        <TextView
+                            android:text="@string/percepcion"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/percepcion"
+                            android:textSize="18sp" />
+
+                    </TableRow>
+
+                    //Perspicacia
+
+                    <TableRow>
+
+                        <TextView
+                            android:text="@string/perspicacia"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/perspicacia"
+                            android:textSize="18sp" />
+
+                    </TableRow>
+
+                    //Persuasión
+
+                    <TableRow>
+
+                        <TextView
+                            android:text="@string/persuasion"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/persuasion"
+                            android:textSize="18sp" />
+
+                    </TableRow>
+
+                    //Religión
+
+                    <TableRow>
+
+                        <TextView
+                            android:text="@string/religion"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/religion"
+                            android:textSize="18sp" />
+
+                    </TableRow>
+
+                    //Sigilo
+
+                    <TableRow>
+
+                        <TextView
+                            android:text="@string/sigilo"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/sigilo"
+                            android:textSize="18sp" />
+
+                    </TableRow>
+
+                    //Supervivencia
+
+                    <TableRow>
+
+                        <TextView
+                            android:text="@string/supervivencia"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/supervivencia"
+                            android:textSize="18sp" />
+
+                    </TableRow>
+
+                    //Trato con animales
+
+                    <TableRow>
+
+                        <TextView
+                            android:text="@string/tratoConAnimales"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/tratoConAnimales"
+                            android:textSize="18sp" />
+
+                    </TableRow>
+
+                </TableLayout>
+
             </LinearLayout>
 
         </LinearLayout>
@@ -444,21 +763,22 @@
     <RelativeLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
         <Button
-            android:id="@+id/finalizar"
+            android:id="@+id/volver"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:text="finalizar"/>
+            android:text="volver"/>
 
         <Button
-            android:id="@+id/guardar"
+            android:id="@+id/editar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toLeftOf="@+id/finalizar"
-            android:text="guardar"/>
+            android:layout_toLeftOf="@+id/volver"
+            android:text="editar"/>
 
     </RelativeLayout>
 

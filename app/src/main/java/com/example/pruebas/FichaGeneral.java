@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.TextView;
 import android.content.Intent;
 import android.widget.Toast;
@@ -134,7 +133,7 @@ public class FichaGeneral extends AppCompatActivity implements View.OnClickListe
 
             int[] statsValue = new int[6];
             for(int i = 0; i < stats.length; i++){
-                statsValue[i] = BonificadorStats(Integer.parseInt((fila.getString(i + 8))));
+                statsValue[i] = bonificadorStats(Integer.parseInt((fila.getString(i + 8))));
                 if(statsValue[i] >= 0) //Añadir + delante del bonificador
                     stats[i].setText(String.format("%s (+%s)", fila.getString(i + 8), statsValue[i]));
                 else
@@ -184,7 +183,7 @@ public class FichaGeneral extends AppCompatActivity implements View.OnClickListe
         editar.setOnClickListener(this);
     }
 
-    private int BonificadorStats(int valor){
+    private int bonificadorStats(int valor){
          return ((valor / 2) - 5);
     }
 

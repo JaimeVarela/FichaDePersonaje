@@ -118,6 +118,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void eventos(){
+        dadosBt.setOnClickListener(this);
         guardar.setOnClickListener(this);
         finalizar.setOnClickListener(this);
     }
@@ -169,7 +170,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
     }
 
-    public void calcular(View vista){
+    private void calcular(){
 
         int[] resultados = new int[6];
         for(int i=0; i<stats.size(); i++){
@@ -312,6 +313,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+            case R.id.dadosBt:
+                calcular();
+                break;
             case R.id.guardar:
                 guardar();
                 break;
