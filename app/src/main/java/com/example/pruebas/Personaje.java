@@ -22,7 +22,7 @@ public class Personaje extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table personajes(codigo int primary key, nombre text, raza text, clase text," +
-                "nv int, exp int, PG int, CA int, VEL int, FUE int, DES int, CON int, INT int, SAB int, CAR int," +
+                "nv int, exp int, PG int, PGmax int, CA int, VEL int, FUE int, DES int, CON int, INT int, SAB int, CAR int," +
                 "salvBonus int, FUEsalv text, DESsalv text, CONsalv text, INTsalv text, SABsalv text, CARsalv text, " +
                 "habBonus int, acrobacias text, arcanos text, atletismo text, engañar text, historia text, interpretacion text," +
                 "intimidar text, investigacion text, juegoDeManos text, medicina text, naturaleza text," +

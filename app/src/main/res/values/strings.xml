@@ -1,8 +1,15 @@
 <resources>
     <string name="app_name">Ficha de personaje</string>
+    <string name="salir">Salir</string>
+    <string name="editar">Editar</string>
+    <string name="volver">Volver</string>
+    <string name="guardar">Guardar</string>
+    <string name="finalizar">Finalizar</string>
     <string name="NV">Nivel</string>
     <string name="EXP">Puntos de Experiencia</string>
     <string name="PG">Puntos de Golpe</string>
+    <string name="PGActual">Puntos de Golpe Actual</string>
+    <string name="PGTotal">Puntos de Golpe Total</string>
     <string name="CA">Clase de Armadura</string>
     <string name="VEL">Velocidad</string>
     <string name="FUE">FUE</string>
@@ -17,7 +24,9 @@
     <string name="clase">Clase</string>
     <string name="stats">ESTADÍSTICAS</string>
     <string name="salvacion">TIRADAS DE SALVACIÓN</string>
+    <string name="salvacion_bonus">TIRADAS DE SALVACIÓN BONUS</string>
     <string name="habilidades">HABILIDADES</string>
+    <string name="habilidades_bonus">HABILIDADES BONUS</string>
     <string name="acrobacias">Acrobacias</string>
     <string name="arcanos">Arcanos</string>
     <string name="atletismo">Atletismo</string>

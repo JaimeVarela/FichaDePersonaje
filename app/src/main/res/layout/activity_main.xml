@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="6dp">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -17,9 +18,10 @@
 
             <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:stretchColumns="1">
 
-                //nombre
+                <!--nombre-->
                 <TableRow>
 
                     <TextView
@@ -32,7 +34,7 @@
 
                 </TableRow>
 
-                //raza
+                <!--raza-->
                 <TableRow>
 
                     <TextView
@@ -44,7 +46,7 @@
 
                 </TableRow>
 
-                //clase
+                <!--clase-->
                 <TableRow>
 
                     <TextView
@@ -56,7 +58,7 @@
 
                 </TableRow>
 
-                //nivel
+                <!--nivel-->
                 <TableRow>
 
                     <TextView
@@ -71,7 +73,7 @@
 
                 </TableRow>
 
-                //experiencia
+                <!--experiencia-->
                 <TableRow>
 
                     <TextView
@@ -85,22 +87,36 @@
 
                 </TableRow>
 
-                //puntos de golpe
+                <!--puntos de golpe-->
                 <TableRow>
 
                     <TextView
-                        android:text="@string/PG"
+                        android:text="@string/PGActual"
                         android:textSize="18sp"/>
 
                     <EditText
                         android:id="@+id/PG"
+                        android:inputType="numberSigned"
+                        android:maxLength="3"
+                        android:textSize="18sp"/>
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:text="@string/PGTotal"
+                        android:textSize="18sp"/>
+
+                    <EditText
+                        android:id="@+id/PGmax"
                         android:inputType="number"
                         android:maxLength="3"
                         android:textSize="18sp"/>
 
                 </TableRow>
 
-                //clase de armadura
+                <!--clase de armadura-->
                 <TableRow>
 
                     <TextView
@@ -115,7 +131,7 @@
 
                 </TableRow>
 
-                //velocidad
+                <!--velocidad-->
                 <TableRow>
 
                     <TextView
@@ -132,11 +148,12 @@
 
             </TableLayout>
 
-            //ESTADÍSITCAS
+            <!--//ESTADÍSTICAS-->
             <TableLayout
                 android:id="@+id/statsTableLayout"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:stretchColumns="0, 1, 2, 3, 4, 5">
 
                 <TableRow
                     android:layout_width="wrap_content"
@@ -146,6 +163,7 @@
                         android:id="@+id/FUE"
                         android:layout_span="1"
                         android:text="@string/FUE"
+                        android:textAlignment="center"
                         android:textSize="18sp" />
 
                     <EditText
@@ -159,6 +177,7 @@
                         android:id="@+id/DES"
                         android:layout_span="1"
                         android:text="@string/DES"
+                        android:textAlignment="center"
                         android:textSize="18sp" />
 
                     <EditText
@@ -172,6 +191,7 @@
                         android:id="@+id/text12"
                         android:layout_span="1"
                         android:text="@string/CON"
+                        android:textAlignment="center"
                         android:textSize="18sp" />
 
                     <EditText
@@ -191,6 +211,7 @@
                         android:id="@+id/INT"
                         android:layout_span="1"
                         android:text="@string/INT"
+                        android:textAlignment="center"
                         android:textSize="18sp" />
 
                     <EditText
@@ -204,6 +225,7 @@
                         android:id="@+id/SAB"
                         android:layout_span="1"
                         android:text="@string/SAB"
+                        android:textAlignment="center"
                         android:textSize="18sp" />
 
                     <EditText
@@ -217,6 +239,7 @@
                         android:id="@+id/CAR"
                         android:layout_span="1"
                         android:text="@string/CAR"
+                        android:textAlignment="center"
                         android:textSize="18sp" />
 
                     <EditText
@@ -230,7 +253,7 @@
 
             </TableLayout>
 
-            //Dados
+            <!--Dados-->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -253,25 +276,27 @@
 
             <LinearLayout
                 android:orientation="horizontal"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Tiradas de Salvación Bonus"
+                    android:layout_weight="3"
+                    android:text="@string/salvacion_bonus"
                     android:textSize="18sp" />
 
                 <EditText
                     android:id="@+id/salvBonus"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:inputType="number"
                     android:maxLength="2"/>
 
             </LinearLayout>
 
-            //FUE, DES, CON, INT, SAB, CAR
+            <!--FUE, DES, CON, INT, SAB, CAR-->
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
@@ -329,20 +354,22 @@
 
             <LinearLayout
                 android:orientation="horizontal"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
                     android:id="@+id/textView2"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Habilidades Bonus"
+                    android:layout_weight="3"
+                    android:text="@string/habilidades_bonus"
                     android:textSize="18sp" />
 
                 <EditText
                     android:id="@+id/habBonus"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:inputType="number"
                     android:maxLength="2"/>
 
@@ -504,26 +531,5 @@
         </LinearLayout>
 
     </ScrollView>
-
-    <RelativeLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:id="@+id/finalizar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:text="finalizar"/>
-
-        <Button
-            android:id="@+id/guardar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toLeftOf="@+id/finalizar"
-            android:text="guardar"/>
-
-    </RelativeLayout>
 
 </LinearLayout>

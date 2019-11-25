@@ -485,274 +485,462 @@
                 android:orientation="horizontal">
 
                 //Lista 1
-
-                <TableLayout
+                <LinearLayout
+                    android:orientation="vertical"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1">
-
                     //Acrobacias
 
-                    <TableRow>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:padding="6dp"
+                        android:background="@android:color/darker_gray">
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
                             android:text="@string/acrobacias"
                             android:textSize="18sp" />
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:id="@+id/acrobacias"
                             android:textSize="18sp"/>
 
-                    </TableRow>
+                    </LinearLayout>
 
                     //Arcanos
 
-                    <TableRow>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:padding="6dp">
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
                             android:text="@string/arcanos"
                             android:textSize="18sp" />
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:id="@+id/arcanos"
-                            android:textSize="18sp" />
+                            android:textSize="18sp"/>
 
-                    </TableRow>
+                    </LinearLayout>
 
                     //Atletismo
 
-                    <TableRow>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:background="@android:color/darker_gray"
+                        android:padding="6dp">
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
                             android:text="@string/atletismo"
                             android:textSize="18sp" />
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:id="@+id/atletismo"
-                            android:textSize="18sp" />
+                            android:textSize="18sp"/>
 
-                    </TableRow>
+                    </LinearLayout>
 
                     //Engañar
 
-                    <TableRow>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:padding="6dp">
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
                             android:text="@string/engañar"
                             android:textSize="18sp" />
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:id="@+id/engañar"
-                            android:textSize="18sp" />
+                            android:textSize="18sp"/>
 
-                    </TableRow>
+                    </LinearLayout>
 
                     //Historia
 
-                    <TableRow>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:background="@android:color/darker_gray"
+                        android:padding="6dp">
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
                             android:text="@string/historia"
                             android:textSize="18sp" />
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:id="@+id/historia"
-                            android:textSize="18sp" />
+                            android:textSize="18sp"/>
 
-                    </TableRow>
+                    </LinearLayout>
 
                     //Interpretación
 
-                    <TableRow>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:padding="6dp">
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
                             android:text="@string/interpretacion"
                             android:textSize="18sp" />
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:id="@+id/interpretacion"
-                            android:textSize="18sp" />
+                            android:textSize="18sp"/>
 
-                    </TableRow>
+                    </LinearLayout>
 
                     //Intimidar
 
-                    <TableRow>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:background="@android:color/darker_gray"
+                        android:padding="6dp">
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
                             android:text="@string/intimidar"
                             android:textSize="18sp" />
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:id="@+id/intimidar"
-                            android:textSize="18sp" />
+                            android:textSize="18sp"/>
 
-                    </TableRow>
+                    </LinearLayout>
 
                     //Investigación
 
-                    <TableRow>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:padding="6dp">
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
                             android:text="@string/investigacion"
                             android:textSize="18sp" />
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:id="@+id/investigacion"
-                            android:textSize="18sp" />
+                            android:textSize="18sp"/>
 
-                    </TableRow>
+                    </LinearLayout>
 
                     //Juego de manos
 
-                    <TableRow>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:background="@android:color/darker_gray"
+                        android:padding="6dp">
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
                             android:text="@string/juegoDeManos"
                             android:textSize="18sp" />
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:id="@+id/juegoDeManos"
-                            android:textSize="18sp" />
+                            android:textSize="18sp"/>
 
-                    </TableRow>
+                    </LinearLayout>
 
-                </TableLayout>
+                </LinearLayout>
 
                 //Lista 2
-
-                <TableLayout
+                <LinearLayout
+                    android:orientation="vertical"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1">
 
                     //Medicina
 
-                    <TableRow>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:padding="6dp">
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
                             android:text="@string/medicina"
                             android:textSize="18sp" />
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:id="@+id/medicina"
-                            android:textSize="18sp" />
+                            android:textSize="18sp"/>
 
-                    </TableRow>
+                    </LinearLayout>
 
                     //Naturaleza
 
-                    <TableRow>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:background="@android:color/darker_gray"
+                        android:padding="6dp">
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
                             android:text="@string/naturaleza"
                             android:textSize="18sp" />
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:id="@+id/naturaleza"
-                            android:textSize="18sp" />
+                            android:textSize="18sp"/>
 
-                    </TableRow>
+                    </LinearLayout>
 
                     //Percepción
 
-                    <TableRow>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:padding="6dp">
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
                             android:text="@string/percepcion"
                             android:textSize="18sp" />
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:id="@+id/percepcion"
-                            android:textSize="18sp" />
+                            android:textSize="18sp"/>
 
-                    </TableRow>
+                    </LinearLayout>
 
                     //Perspicacia
 
-                    <TableRow>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:background="@android:color/darker_gray"
+                        android:padding="6dp">
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
                             android:text="@string/perspicacia"
                             android:textSize="18sp" />
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:id="@+id/perspicacia"
-                            android:textSize="18sp" />
+                            android:textSize="18sp"/>
 
-                    </TableRow>
+                    </LinearLayout>
 
                     //Persuasión
 
-                    <TableRow>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:padding="6dp">
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
                             android:text="@string/persuasion"
                             android:textSize="18sp" />
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:id="@+id/persuasion"
-                            android:textSize="18sp" />
+                            android:textSize="18sp"/>
 
-                    </TableRow>
+                    </LinearLayout>
 
                     //Religión
 
-                    <TableRow>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:background="@android:color/darker_gray"
+                        android:padding="6dp">
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
                             android:text="@string/religion"
                             android:textSize="18sp" />
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:id="@+id/religion"
-                            android:textSize="18sp" />
+                            android:textSize="18sp"/>
 
-                    </TableRow>
+                    </LinearLayout>
 
                     //Sigilo
 
-                    <TableRow>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:padding="6dp">
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
                             android:text="@string/sigilo"
                             android:textSize="18sp" />
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:id="@+id/sigilo"
-                            android:textSize="18sp" />
+                            android:textSize="18sp"/>
 
-                    </TableRow>
+                    </LinearLayout>
 
                     //Supervivencia
 
-                    <TableRow>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:background="@android:color/darker_gray"
+                        android:padding="6dp">
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
                             android:text="@string/supervivencia"
                             android:textSize="18sp" />
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:id="@+id/supervivencia"
-                            android:textSize="18sp" />
+                            android:textSize="18sp"/>
 
-                    </TableRow>
+                    </LinearLayout>
 
                     //Trato con animales
 
-                    <TableRow>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:padding="6dp">
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
                             android:text="@string/tratoConAnimales"
                             android:textSize="18sp" />
 
                         <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:id="@+id/tratoConAnimales"
-                            android:textSize="18sp" />
+                            android:textSize="18sp"/>
 
-                    </TableRow>
+                    </LinearLayout>
 
-                </TableLayout>
+                </LinearLayout>
 
             </LinearLayout>
 

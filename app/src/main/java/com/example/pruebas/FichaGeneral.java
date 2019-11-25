@@ -1,21 +1,24 @@
 package com.example.pruebas;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.TextView;
 import android.content.Intent;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class FichaGeneral extends AppCompatActivity implements View.OnClickListener {
+public class FichaGeneral extends AppCompatActivity{
 
     private TextView nombre, raza, clase, pg, ca, vel, nv, exp;
+    private int pgValue, pgMaxValue;
     private TextView[] stats;
     private ArrayList<TextView> salvacion;
     private int salvBonus;
@@ -23,7 +26,6 @@ public class FichaGeneral extends AppCompatActivity implements View.OnClickListe
     private ArrayList<TextView> habilidades;
     private int habBonus;
     private String[] habilidadesCb;
-    private Button volver, editar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +34,24 @@ public class FichaGeneral extends AppCompatActivity implements View.OnClickListe
 
         asociar();
         iniciar();
-        eventos();
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.general_menu, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.m_editar:
+                editar();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     private void asociar(){
@@ -80,9 +99,6 @@ public class FichaGeneral extends AppCompatActivity implements View.OnClickListe
         habilidades.add((TextView) findViewById(R.id.sigilo));
         habilidades.add((TextView) findViewById(R.id.supervivencia));
         habilidades.add((TextView) findViewById(R.id.tratoConAnimales));
-
-        volver = (Button)findViewById(R.id.volver);
-        editar = (Button)findViewById(R.id.editar);
     }
 
     private void iniciar(){
@@ -104,7 +120,7 @@ public class FichaGeneral extends AppCompatActivity implements View.OnClickListe
             //FROM articulos
             //WHERE codigo = codigo_tecleado
             Cursor fila = BaseDeDatos.rawQuery
-                    ("select nombre, raza, clase, nv, exp, PG, CA, VEL, FUE, DES, CON, INT, SAB, CAR," +
+                    ("select nombre, raza, clase, nv, exp, PG, PGmax, CA, VEL, FUE, DES, CON, INT, SAB, CAR," +
                             " salvBonus, FUEsalv, DESsalv, CONsalv, INTsalv, SABsalv, CARsalv, habBonus, " +
                             "acrobacias text, arcanos text, atletismo text, engañar text, historia text, interpretacion text," +
                             "intimidar text, investigacion text, juegoDeManos text, medicina text, naturaleza text," +
@@ -127,25 +143,27 @@ public class FichaGeneral extends AppCompatActivity implements View.OnClickListe
             clase.setText(fila.getString(2));
             nv.setText(fila.getString(3));
             exp.setText(fila.getString(4));
-            pg.setText(fila.getString(5));
-            ca.setText(fila.getString(6));
-            vel.setText(fila.getString(7));
+            pgValue = Integer.parseInt(fila.getString(5));
+            pgMaxValue = Integer.parseInt(fila.getString(6));
+            pg.setText(String.format("%s / %s", fila.getString(5), fila.getString(6)));
+            ca.setText(fila.getString(7));
+            vel.setText(fila.getString(8));
 
             int[] statsValue = new int[6];
             for(int i = 0; i < stats.length; i++){
-                statsValue[i] = bonificadorStats(Integer.parseInt((fila.getString(i + 8))));
+                statsValue[i] = bonificadorStats(Integer.parseInt((fila.getString(i + 9))));
                 if(statsValue[i] >= 0) //Añadir + delante del bonificador
-                    stats[i].setText(String.format("%s (+%s)", fila.getString(i + 8), statsValue[i]));
+                    stats[i].setText(String.format("%s\n   (+%s)", fila.getString(i + 9), statsValue[i]));
                 else
-                    stats[i].setText(String.format("%s (%s)", fila.getString(i + 8), statsValue[i]));
+                    stats[i].setText(String.format("%s\n   (%s)", fila.getString(i + 9), statsValue[i]));
             }
 
 
-            salvBonus = Integer.parseInt(fila.getString(14));
+            salvBonus = Integer.parseInt(fila.getString(15));
 
             salvacionCb = new String[salvacion.size()];
             for(int i = 0; i < salvacion.size(); i++){
-                salvacionCb[i] = fila.getString(i + 15);
+                salvacionCb[i] = fila.getString(i + 16);
                 int valor = statsValue[i];
                 if(Boolean.parseBoolean(salvacionCb[i]))
                     valor += salvBonus;
@@ -157,11 +175,11 @@ public class FichaGeneral extends AppCompatActivity implements View.OnClickListe
 
             }
 
-            habBonus = Integer.parseInt(fila.getString(21));
+            habBonus = Integer.parseInt(fila.getString(22));
 
             habilidadesCb = new String[habilidades.size()];
             for(int i = 0; i < habilidades.size(); i++){
-                habilidadesCb[i] = fila.getString(i + 22);
+                habilidadesCb[i] = fila.getString(i + 23);
                 int valor = Habilidades.HabilidadStat(statsValue, i, habBonus, Boolean.parseBoolean(habilidadesCb[i]));
                 if(valor >= 0)
                     habilidades.get(i).setText(String.format("+%s", String.valueOf(valor)));
@@ -178,11 +196,6 @@ public class FichaGeneral extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private void eventos(){
-        volver.setOnClickListener(this);
-        editar.setOnClickListener(this);
-    }
-
     private int bonificadorStats(int valor){
          return ((valor / 2) - 5);
     }
@@ -197,7 +210,8 @@ public class FichaGeneral extends AppCompatActivity implements View.OnClickListe
         otra.putExtra("clase", clase.getText().toString());
         otra.putExtra("nv", nv.getText().toString());
         otra.putExtra("exp", exp.getText().toString());
-        otra.putExtra("pg", pg.getText().toString());
+        otra.putExtra("pg", String.valueOf(pgValue));
+        otra.putExtra("pgMax", String.valueOf(pgMaxValue));
         otra.putExtra("ca", ca.getText().toString());
         otra.putExtra("vel", vel.getText().toString());
 
@@ -218,24 +232,13 @@ public class FichaGeneral extends AppCompatActivity implements View.OnClickListe
         startActivity(otra);
     }
 
-    private void volver(){
-        Intent volver = new Intent(this, Perfiles.class);
-        startActivity(volver);
-    }
-
     private void toast(String texto){
         Toast.makeText(this, texto, Toast.LENGTH_SHORT).show();
     }
 
     @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.volver:
-                volver();
-                break;
-            case R.id.editar:
-                editar();
-                break;
-        }
+    protected void onStart() { //Se utiliza al volver con el finish() del Editar
+        super.onStart();
+        iniciar();
     }
 }

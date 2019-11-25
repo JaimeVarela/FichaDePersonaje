@@ -20,7 +20,11 @@
         </activity>
         <activity
             android:name=".FichaGeneral"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait">
+
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Perfiles"/>
+        </activity>
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait" />

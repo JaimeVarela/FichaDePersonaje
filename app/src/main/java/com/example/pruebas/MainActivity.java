@@ -1,11 +1,15 @@
 package com.example.pruebas;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -21,7 +25,7 @@ import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private EditText nombre, pg, ca, vel, nv, exp;
+    private EditText nombre, pg, pgMax, ca, vel, nv, exp;
     private Spinner raza, clase;
     private ArrayList<EditText> stats;
     private TextView dados;
@@ -41,10 +45,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         eventos();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.editar_menu, menu);
+        //return super.onCreateOptionsMenu(menu); //Le pasaría la tarea de crear el menú al padre
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.m_guardar:
+                guardar();
+                return true;
+            case R.id.m_finalizar:
+                finalizar();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        //return super.onOptionsItemSelected(item);
+    }
+
     private void asociar(){
         nombre = (EditText)findViewById(R.id.nombre);
 
         pg = (EditText)findViewById(R.id.PG);
+        pgMax = (EditText)findViewById(R.id.PGmax);
         ca = (EditText)findViewById(R.id.CA);
         vel = (EditText)findViewById(R.id.VEL);
         nv = (EditText)findViewById(R.id.NV);
@@ -93,8 +120,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         habilidades.add((CheckBox)findViewById(R.id.tratoConAnimalesCb));
 
         dadosBt = (Button)findViewById(R.id.dadosBt);
-        guardar = (Button)findViewById(R.id.guardar);
-        finalizar = (Button)findViewById(R.id.finalizar);
     }
 
     private void iniciar(){
@@ -119,8 +144,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void eventos(){
         dadosBt.setOnClickListener(this);
-        guardar.setOnClickListener(this);
-        finalizar.setOnClickListener(this);
     }
 
     private void mostrar_datos(){
@@ -151,8 +174,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         nv.setText(getIntent().getStringExtra("nv"));
         exp.setText(getIntent().getStringExtra("exp"));
         pg.setText(getIntent().getStringExtra("pg"));
+        pgMax.setText(getIntent().getStringExtra("pgMax"));
         ca.setText(getIntent().getStringExtra("ca"));
         vel.setText(getIntent().getStringExtra("vel"));
+
+        salvBonus.setText(getIntent().getStringExtra("salvBonus"));
 
         String[] statsSalv = getIntent().getStringArrayExtra("statsSalv");
         if(statsSalv != null){
@@ -225,6 +251,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fila.put("nv", nv.getText().toString());
         fila.put("exp", exp.getText().toString());
         fila.put("PG", pg.getText().toString());
+        fila.put("PGmax", pgMax.getText().toString());
         fila.put("CA", ca.getText().toString());
         fila.put("VEL", vel.getText().toString());
         fila.put("FUE", stats.get(0).getText().toString());
@@ -288,22 +315,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void finalizar(){
-
-        //Enlace con otra actividad
-        Intent otra = new Intent(this, FichaGeneral.class);
-        otra.putExtra("codigo", getIntent().getStringExtra("codigo"));
-        /*
-        otra.putExtra("nombre", nombre.getText().toString());
-        otra.putExtra("raza", raza.getSelectedItem().toString());
-        otra.putExtra("clase", clase.getSelectedItem().toString());
-
-        String[] statsGuardar = new String[stats.size()];
-        for(int i=0; i<statsGuardar.length; i++){
-            statsGuardar[i] = stats.get(i).getText().toString();
-        }
-        otra.putExtra("stats", statsGuardar);
-        */
-        startActivity(otra);
+        finish();
     }
 
     private void toast(String texto){
@@ -315,12 +327,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
             case R.id.dadosBt:
                 calcular();
-                break;
-            case R.id.guardar:
-                guardar();
-                break;
-            case R.id.finalizar:
-                finalizar();
                 break;
         }
     }

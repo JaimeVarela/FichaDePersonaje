@@ -1,5 +1,6 @@
 package com.example.pruebas;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -7,6 +8,9 @@ import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -26,6 +30,23 @@ public class Perfiles extends AppCompatActivity {
         asociar();
         iniciar();
         eventos();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.lista_menu, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.m_salir:
+                salir();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     private void asociar(){
@@ -88,6 +109,10 @@ public class Perfiles extends AppCompatActivity {
         Intent actividad = new Intent(this, FichaGeneral.class);
         actividad.putExtra("codigo", String.valueOf(i));
         startActivity(actividad);
+    }
+
+    private void salir(){
+        finish();
     }
 
     public void toast(String texto){
