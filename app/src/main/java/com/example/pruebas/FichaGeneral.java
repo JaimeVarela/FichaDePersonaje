@@ -165,14 +165,14 @@ public class FichaGeneral extends AppCompatActivity{
             for(int i = 0; i < salvacion.size(); i++){
                 salvacionCb[i] = fila.getString(i + 16);
                 int valor = statsValue[i];
-                if(Boolean.parseBoolean(salvacionCb[i]))
+                if(Boolean.parseBoolean(salvacionCb[i])){
                     valor += salvBonus;
+                    salvacion.get(i).setBackgroundResource(R.drawable.back);
+                }
                 if(valor >= 0)
                     salvacion.get(i).setText(String.format("+%s", String.valueOf(valor)));
                 else
                     salvacion.get(i).setText(String.valueOf(valor));
-
-
             }
 
             habBonus = Integer.parseInt(fila.getString(22));
@@ -185,6 +185,8 @@ public class FichaGeneral extends AppCompatActivity{
                     habilidades.get(i).setText(String.format("+%s", String.valueOf(valor)));
                 else
                     habilidades.get(i).setText(String.valueOf(valor));
+                if(Boolean.parseBoolean(habilidadesCb[i]))
+                    habilidades.get(i).setBackgroundResource(R.drawable.back);
             }
             //Cerramos la conexión
             BaseDeDatos.close();

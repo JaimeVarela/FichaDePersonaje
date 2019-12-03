@@ -139,14 +139,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, BD.clases);
         clase.setAdapter(adaptador2);
 
-        mostrar_datos();
+        mostrarDatos();
     }
 
     private void eventos(){
         dadosBt.setOnClickListener(this);
     }
 
-    private void mostrar_datos(){
+    private void mostrarDatos(){
 
         nombre.setText(getIntent().getStringExtra("nombre"));
 
@@ -201,7 +201,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int[] resultados = new int[6];
         for(int i=0; i<stats.size(); i++){
 
-            resultados[i] = calcular_dados();
+            resultados[i] = calcularDados();
         }
         Arrays.sort(resultados);
         String resultado = "";
@@ -211,7 +211,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dados.setText(resultado);
     }
 
-    private int calcular_dados(){
+    private int calcularDados(){
 
         int dado[] = new int[4]; //Los dados d6 que se utilizarán para calcular los stats
 
